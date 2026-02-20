@@ -25,16 +25,11 @@ interface RightColumnProps {
 
 export function RightColumn({ metrics, className }: RightColumnProps) {
   return (
-    <div
-      className={cn(
-        'flex flex-col w-[544px] shrink-0 rounded-[12px] border border-[#3f3f46] bg-[#27272a] overflow-hidden min-h-0',
-        className
-      )}
-    >
+    <div className={cn('flex flex-col w-[544px] shrink-0 min-h-0 overflow-y-auto', className)}>
       {/* 1. Blockage Predictions */}
-      <div className="flex flex-col gap-[10px] p-5">
+      <div className="flex flex-col gap-[10px] p-5 border-t border-[#3f3f46]">
         <SectionTitle
-          icon={<Prohibit size={24} className="text-foreground-muted" />}
+          icon={<Prohibit size={24} weight="fill" className="text-foreground-muted" />}
           title="Blockage Predictions"
           linkText="View predictions"
         />
@@ -72,7 +67,7 @@ export function RightColumn({ metrics, className }: RightColumnProps) {
       {/* 2. Condition Changes */}
       <div className="flex flex-col gap-[10px] p-5 border-t border-[#3f3f46]">
         <SectionTitle
-          icon={<SecurityCamera size={24} className="text-foreground-muted" />}
+          icon={<SecurityCamera size={24} weight="fill" className="text-foreground-muted" />}
           title="Condition Changes"
           linkText="View changes"
         />
@@ -110,7 +105,7 @@ export function RightColumn({ metrics, className }: RightColumnProps) {
       {/* 3. Today's Rainfall */}
       <div className="flex flex-col gap-[10px] p-5 border-t border-[#3f3f46]">
         <SectionTitle
-          icon={<Umbrella size={24} className="text-foreground-muted" />}
+          icon={<Umbrella size={24} weight="fill" className="text-foreground-muted" />}
           title="Today's Rainfall"
         />
         <div className="flex gap-[10px]">
@@ -118,21 +113,18 @@ export function RightColumn({ metrics, className }: RightColumnProps) {
             value="0.51"
             label="Total rain (in)"
             labelColor="text-[#3b82f6]"
-            icon={<span />}
             className="flex-1"
           />
           <MetricStateCard
             value="0.05"
             label="Intensity avg. (in/hr)"
             labelColor="text-[#3b82f6]"
-            icon={<span />}
             className="flex-1"
           />
           <MetricStateCard
             value="0.17"
             label="Year avg. (in/hr)"
             labelColor="text-[#3b82f6]"
-            icon={<span />}
             className="flex-1"
           />
         </div>

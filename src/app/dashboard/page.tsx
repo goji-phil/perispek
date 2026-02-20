@@ -1,12 +1,15 @@
 // src/app/dashboard/page.tsx
 // Server Component — no 'use client'
 import {
-  Compass,
+  Gauge,
   Drop,
   WarningDiamond,
   Wrench,
   Exam,
   MagnifyingGlass,
+  Gear,
+  Calendar,
+  Export,
 } from '@phosphor-icons/react/ssr'
 import { computeDashboardMetrics } from '@/lib/data/dashboard'
 import { MetricLargeCard } from '@/components/dashboard/MetricLargeCard'
@@ -19,11 +22,11 @@ export default function DashboardPage() {
   return (
     <div className="flex flex-col h-full overflow-hidden">
 
-      {/* Top bar — 80px */}
-      <div className="flex items-center justify-between h-[80px] shrink-0 px-5 py-5 border-b border-[#3f3f46]">
+      {/* Top bar — 56px */}
+      <div className="flex items-center justify-between h-[56px] shrink-0 px-5 border-b border-[#3f3f46]">
         {/* Left: icon + title */}
         <div className="flex items-center gap-1.5">
-          <Compass size={24} className="text-foreground-muted" />
+          <Gauge size={24} weight="fill" className="text-foreground-muted" />
           <span className="text-[20px] font-medium text-foreground leading-6">
             System Overview Dashboard
           </span>
@@ -42,14 +45,15 @@ export default function DashboardPage() {
               readOnly
             />
           </div>
-          <button className="h-9 px-[10px] rounded-[8px] border border-[#3f3f46] text-sm font-medium text-foreground">
+          <button className="h-9 px-[10px] rounded-[8px] border border-[#3f3f46] text-sm font-medium text-foreground flex items-center gap-1.5">
+            <Export size={16} className="text-foreground-muted" />
             Share
           </button>
         </div>
       </div>
 
-      {/* Functions bar — 80px */}
-      <div className="flex items-center h-[80px] shrink-0 px-5 py-5 gap-[10px] border-b border-[#3f3f46]">
+      {/* Functions bar — 56px */}
+      <div className="flex items-center h-[56px] shrink-0 px-5 gap-[10px] border-b border-[#3f3f46]">
         <div className="relative flex items-center w-[334px]">
           <MagnifyingGlass
             size={16}
@@ -62,10 +66,12 @@ export default function DashboardPage() {
             readOnly
           />
         </div>
-        <button className="h-9 px-[10px] rounded-[8px] border border-[#3f3f46] text-sm font-medium text-foreground shrink-0">
+        <button className="h-9 px-[10px] rounded-[8px] border border-[#3f3f46] text-sm font-medium text-foreground shrink-0 flex items-center gap-1.5">
+          <Gear size={16} className="text-foreground-muted" />
           Dashboard settings
         </button>
-        <button className="h-9 px-[10px] rounded-[8px] border border-[#3f3f46] text-sm font-medium text-foreground shrink-0">
+        <button className="h-9 px-[10px] rounded-[8px] border border-[#3f3f46] text-sm font-medium text-foreground shrink-0 flex items-center gap-1.5">
+          <Calendar size={16} className="text-foreground-muted" />
           Year to date
         </button>
         <span className="ml-auto text-sm text-foreground-muted shrink-0">
@@ -73,34 +79,34 @@ export default function DashboardPage() {
         </span>
       </div>
 
-      {/* Main content area — flex-1, no overflow */}
-      <div className="flex flex-col flex-1 min-h-0 px-5 pb-5 pt-[10px] gap-[10px]">
+      {/* Metrics area — padded, shrinks to content */}
+      <div className="flex flex-col shrink-0 p-5 gap-[10px]">
 
-        {/* Primary metrics row — 4 cards, fixed height 170px */}
-        <div className="flex gap-[10px] h-[170px] shrink-0">
+        {/* Primary metrics row — 4 cards */}
+        <div className="flex gap-[10px]">
           <MetricLargeCard
-            icon={<Drop size={24} className="text-foreground-muted" />}
+            icon={<Drop size={24} />}
             label="Risk of overflow"
             value={`${metrics.overflowAssetCount} assets`}
             description={`${metrics.iotMonitoredCount} assets monitored`}
             linkText="View assets"
           />
           <MetricLargeCard
-            icon={<WarningDiamond size={24} className="text-foreground-muted" />}
+            icon={<WarningDiamond size={24} weight="fill" />}
             label="Avg. risk score"
             value={String(metrics.avgRiskScore)}
             description={`${metrics.riskBandCounts.high} high, ${metrics.riskBandCounts.critical} critical`}
             linkText="View high risk scores"
           />
           <MetricLargeCard
-            icon={<Wrench size={24} className="text-foreground-muted" />}
+            icon={<Wrench size={24} />}
             label="Work orders"
             value={`${metrics.openWorkOrderCount} open`}
             description={`${metrics.highPriorityWorkOrderCount} are high priority`}
             linkText="View work orders"
           />
           <MetricLargeCard
-            icon={<Exam size={24} className="text-foreground-muted" />}
+            icon={<Exam size={24} />}
             label="Inspections this month"
             value={`${metrics.monthlyLinearFeet.toLocaleString()} ft`}
             description={`${metrics.monthlyPct}% of consent decree target`}
@@ -133,12 +139,12 @@ export default function DashboardPage() {
           </span>
         </div>
 
-        {/* Below-metrics: map (left) + right column */}
-        <div className="flex flex-1 gap-[10px] min-h-0">
-          <MapPlaceholder className="flex-1 min-h-0" />
-          <RightColumn metrics={metrics} />
-        </div>
+      </div>
 
+      {/* Below-metrics — full width, no outer padding, fills remaining height */}
+      <div className="flex flex-1 gap-0 min-h-0">
+        <MapPlaceholder className="flex-1 min-h-0" />
+        <RightColumn metrics={metrics} />
       </div>
     </div>
   )

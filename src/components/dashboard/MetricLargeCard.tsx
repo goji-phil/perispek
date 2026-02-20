@@ -29,9 +29,9 @@ export function MetricLargeCard({
     >
       {/* Top content */}
       <div className="flex flex-col gap-1.5 p-[10px] flex-1">
-        <div className="flex items-center gap-1.5">
-          {icon}
+        <div className="flex items-center justify-between gap-1.5">
           <span className="text-base font-medium text-foreground">{label}</span>
+          <span className="text-primary shrink-0">{icon}</span>
         </div>
         <p className="text-[40px] font-medium leading-[46px] tracking-[-0.08px] text-foreground">
           {value}

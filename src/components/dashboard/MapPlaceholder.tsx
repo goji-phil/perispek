@@ -1,7 +1,7 @@
 // src/components/dashboard/MapPlaceholder.tsx
 // Server Component — no 'use client'
 import {
-  Diamond,
+  WarningDiamond,
   MagnifyingGlass,
   ArrowsOut,
   Minus,
@@ -17,10 +17,10 @@ interface MapPlaceholderProps {
 
 export function MapPlaceholder({ className }: MapPlaceholderProps) {
   return (
-    <div className={cn('flex flex-col gap-[10px] min-h-0', className)}>
+    <div className={cn('flex flex-col gap-[10px] min-h-0 border-t border-r border-[#3f3f46] p-5', className)}>
       {/* Section title */}
       <SectionTitle
-        icon={<Diamond size={24} className="text-foreground-muted" />}
+        icon={<WarningDiamond size={24} weight="fill" className="text-foreground-muted" />}
         title="Risk Score"
         linkText="View full map"
       />
