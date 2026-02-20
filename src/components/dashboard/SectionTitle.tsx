@@ -12,7 +12,7 @@ interface SectionTitleProps {
 
 export function SectionTitle({ icon, title, linkText, className }: SectionTitleProps) {
   return (
-    <div className={cn('flex items-center gap-2', className)}>
+    <div className={cn('flex items-center gap-1.5', className)}>
       {icon}
       <span className="text-[20px] font-medium text-foreground leading-6">{title}</span>
       {linkText && (

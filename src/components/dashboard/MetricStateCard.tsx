@@ -20,7 +20,7 @@ export function MetricStateCard({
   return (
     <div
       className={cn(
-        'flex flex-col gap-2 rounded-[12px] border p-3 bg-[#27272a] border-[#3f3f46]',
+        'flex flex-col gap-1.5 rounded-[12px] border p-[10px] bg-[#27272a] border-[#3f3f46]',
         className
       )}
     >

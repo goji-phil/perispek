@@ -48,8 +48,12 @@
   --topbar-height: 56px;
 
   /* === Spacing (from design system) === */
+  /* Valid spacing values: 2px · 4px · 6px · 10px · 20px — NO OTHER VALUES */
+  --spacing-5xs: 2px;
+  --spacing-4xs: 4px;
   --spacing-3xs: 6px;
   --spacing-xs: 10px;
+  --spacing-lg: 20px;
 
   /* === Phase 2: Dashboard tokens === */
 
@@ -63,12 +67,6 @@
   --color-error: #ef4444;
   --color-link: #3b82f6;
   --color-muted-foreground: #a1a1aa;
-
-  /* Spacing additions */
-  --spacing-2xs: 8px;
-  --spacing-4xs: 4px;
-  --spacing-sm: 12px;
-  --spacing-lg: 20px;
 }
 
 /* Base styles */

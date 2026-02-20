@@ -22,7 +22,7 @@ export default function DashboardPage() {
       {/* Top bar — 80px */}
       <div className="flex items-center justify-between h-[80px] shrink-0 px-5 py-5 border-b border-[#3f3f46]">
         {/* Left: icon + title */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5">
           <Compass size={24} className="text-foreground-muted" />
           <span className="text-[20px] font-medium text-foreground leading-6">
             System Overview Dashboard
@@ -38,11 +38,11 @@ export default function DashboardPage() {
             <input
               type="text"
               placeholder="Search..."
-              className="w-full h-9 pl-9 pr-3 rounded-[8px] bg-transparent border border-[#3f3f46] text-sm text-foreground placeholder:text-foreground-muted outline-none"
+              className="w-full h-9 pl-9 pr-[10px] rounded-[8px] bg-transparent border border-[#3f3f46] text-sm text-foreground placeholder:text-foreground-muted outline-none"
               readOnly
             />
           </div>
-          <button className="h-9 px-4 rounded-[8px] border border-[#3f3f46] text-sm font-medium text-foreground">
+          <button className="h-9 px-[10px] rounded-[8px] border border-[#3f3f46] text-sm font-medium text-foreground">
             Share
           </button>
         </div>
@@ -58,14 +58,14 @@ export default function DashboardPage() {
           <input
             type="text"
             placeholder="Search assets, alerts, work orders..."
-            className="w-full h-9 pl-9 pr-3 rounded-[8px] bg-transparent border border-[#3f3f46] text-sm text-foreground placeholder:text-foreground-muted outline-none"
+            className="w-full h-9 pl-9 pr-[10px] rounded-[8px] bg-transparent border border-[#3f3f46] text-sm text-foreground placeholder:text-foreground-muted outline-none"
             readOnly
           />
         </div>
-        <button className="h-9 px-4 rounded-[8px] border border-[#3f3f46] text-sm font-medium text-foreground shrink-0">
+        <button className="h-9 px-[10px] rounded-[8px] border border-[#3f3f46] text-sm font-medium text-foreground shrink-0">
           Dashboard settings
         </button>
-        <button className="h-9 px-4 rounded-[8px] border border-[#3f3f46] text-sm font-medium text-foreground shrink-0">
+        <button className="h-9 px-[10px] rounded-[8px] border border-[#3f3f46] text-sm font-medium text-foreground shrink-0">
           Year to date
         </button>
         <span className="ml-auto text-sm text-foreground-muted shrink-0">
@@ -109,7 +109,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Asset type summary strip — DASH-03: pipes / manholes / storm drains */}
-        <div className="flex items-center gap-4 shrink-0 px-1">
+        <div className="flex items-center gap-[10px] shrink-0 px-1">
           <span className="text-xs text-[#71717a]">
             Asset breakdown:
           </span>

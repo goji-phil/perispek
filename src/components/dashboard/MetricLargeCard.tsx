@@ -28,8 +28,8 @@ export function MetricLargeCard({
       )}
     >
       {/* Top content */}
-      <div className="flex flex-col gap-2 p-3 flex-1">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-col gap-1.5 p-[10px] flex-1">
+        <div className="flex items-center gap-1.5">
           {icon}
           <span className="text-base font-medium text-foreground">{label}</span>
         </div>
@@ -41,7 +41,7 @@ export function MetricLargeCard({
       {/* Divider */}
       <div className="border-t border-[#3f3f46]" />
       {/* Link row */}
-      <div className="flex items-center gap-1 px-3 py-[10px]">
+      <div className="flex items-center gap-1 px-[10px] py-[10px]">
         <span className="text-base font-medium text-[#3b82f6]">{linkText}</span>
         <ArrowRight size={20} className="text-[#3b82f6]" />
       </div>
