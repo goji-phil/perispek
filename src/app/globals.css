@@ -50,6 +50,25 @@
   /* === Spacing (from design system) === */
   --spacing-3xs: 6px;
   --spacing-xs: 10px;
+
+  /* === Phase 2: Dashboard tokens === */
+
+  /* Card and section surfaces */
+  --color-card: #27272a;
+  --color-border-light: #3f3f46;
+
+  /* Semantic status colors */
+  --color-success: #22c55e;
+  --color-warning: #facc15;
+  --color-error: #ef4444;
+  --color-link: #3b82f6;
+  --color-muted-foreground: #a1a1aa;
+
+  /* Spacing additions */
+  --spacing-2xs: 8px;
+  --spacing-4xs: 4px;
+  --spacing-sm: 12px;
+  --spacing-lg: 20px;
 }
 
 /* Base styles */
