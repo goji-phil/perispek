@@ -1,50 +1,55 @@
+@import url('https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  /* === Colors — approximated from Figma dark-theme dashboard === */
-  /* TODO: Refine exact values after Figma login to extract precise tokens */
+  /* === Typography === */
+  --font-sans: 'Switzer', system-ui, -apple-system, sans-serif;
 
-  /* Primary brand (interactive elements, active states, links) */
+  /* === Colors — from IDEX x Goji Design System === */
+
+  /* Backgrounds */
+  --color-background: #18181b;       /* elements/background — zinc-900 */
+  --color-surface: #18181b;          /* sidebar / panel background */
+  --color-surface-hover: #ffffff08;  /* subtle hover overlay */
+  --color-surface-active: #ffffff0d; /* elements/interaction/selected */
+
+  /* Text */
+  --color-foreground: #fdfdfd;         /* typography/text-header */
+  --color-foreground-muted: #a1a1aa;   /* typography/text-label — zinc-400 */
+  --color-foreground-disabled: #52525b; /* typography/text-disabled — zinc-600 */
+
+  /* Border */
+  --color-border: #52525b;           /* elements/border — zinc-600 */
+
+  /* Primary brand — used sparingly (logo mark, key accents) */
   --color-primary: oklch(0.58 0.19 240);
   --color-primary-hover: oklch(0.52 0.19 240);
 
-  /* Backgrounds */
-  --color-background: #080b12;       /* App page background — deep navy-black */
-  --color-surface: #0f1117;          /* Sidebar, panel backgrounds */
-  --color-surface-hover: #1a1d26;    /* Hover state for nav items */
-  --color-surface-active: #1e2235;   /* Active/selected nav item background */
-
-  /* Text */
-  --color-foreground: #e8eaf0;       /* Primary text — near-white */
-  --color-foreground-muted: #8b90a0; /* Secondary/label text */
-
-  /* Border */
-  --color-border: #2a2d3a;           /* Subtle dividers and outlines */
-
-  /* Risk band colors (NASSCO condition grades mapped to bands) */
-  --color-risk-low: oklch(0.72 0.18 145);      /* Green — grade 1–2 */
-  --color-risk-medium: oklch(0.78 0.18 75);    /* Amber — grade 3 */
-  --color-risk-high: oklch(0.68 0.22 35);      /* Orange — grade 4 */
-  --color-risk-critical: oklch(0.60 0.25 25);  /* Red — grade 5 */
+  /* Risk band colors */
+  --color-risk-low: oklch(0.72 0.18 145);
+  --color-risk-medium: oklch(0.78 0.18 75);
+  --color-risk-high: oklch(0.68 0.22 35);
+  --color-risk-critical: oklch(0.60 0.25 25);
 
   /* IoT sensor status colors */
-  --color-status-normal: oklch(0.72 0.18 145);   /* d/D below threshold */
-  --color-status-warning: oklch(0.78 0.18 75);   /* d/D at or above threshold */
-  --color-status-overflow: oklch(0.60 0.25 25);  /* d/D > 1.0 */
-
-  /* === Typography === */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --color-status-normal: oklch(0.72 0.18 145);
+  --color-status-warning: oklch(0.78 0.18 75);
+  --color-status-overflow: oklch(0.60 0.25 25);
 
   /* === Border Radius === */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
+  --radius-xs: 4px;
+  --radius-sm: 12px;   /* radius-sm in design system — interactive elements */
+  --radius-md: 16px;
+  --radius-lg: 20px;
 
   /* === Layout Dimensions === */
-  --sidebar-width: 240px;
+  --sidebar-width: 200px;
   --sidebar-collapsed-width: 64px;
   --topbar-height: 56px;
+
+  /* === Spacing (from design system) === */
+  --spacing-3xs: 6px;
+  --spacing-xs: 10px;
 }
 
 /* Base styles */
@@ -67,7 +72,7 @@ a {
   text-decoration: none;
 }
 
-/* Page transition animation — subtle fade on route change */
+/* Page transition animation */
 @layer components {
   .page-fade-in {
     animation: pageFadeIn 150ms ease-out;
