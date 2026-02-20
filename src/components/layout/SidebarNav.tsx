@@ -51,7 +51,7 @@ function NavItem({
           href={href}
           title={label}
           className={cn(
-            'flex items-center justify-center p-2 rounded-[12px] transition-colors duration-150',
+            'flex items-center justify-center p-1.5 rounded-[12px] transition-colors duration-150',
             isActive
               ? 'bg-[rgba(255,255,255,0.05)] text-foreground'
               : 'text-[#71717a] hover:bg-[rgba(255,255,255,0.04)] hover:text-foreground'
@@ -70,7 +70,7 @@ function NavItem({
     <Link
       href={href}
       className={cn(
-        'flex items-center gap-2 p-2 min-h-8 rounded-[12px] w-full transition-colors duration-150',
+        'flex items-center gap-1.5 p-1.5 min-h-8 rounded-[12px] w-full transition-colors duration-150',
         isActive
           ? 'bg-[rgba(255,255,255,0.05)] text-foreground'
           : 'text-[#e4e4e7] hover:bg-[rgba(255,255,255,0.04)] hover:text-foreground'
@@ -95,7 +95,7 @@ export function SidebarNav({
 
   if (collapsed) {
     return (
-      <div className="flex flex-col items-center gap-6 px-3 py-5 h-full">
+      <div className="flex flex-col items-center gap-5 px-[10px] py-5 h-full">
         {/* Logo mark only */}
         <PerispekLogo size={32} />
 
@@ -118,7 +118,7 @@ export function SidebarNav({
         <div className="w-full border-t border-border shrink-0" />
 
         {/* Settings nav */}
-        <div className="flex flex-col items-center gap-0 shrink-0 w-10">
+        <div className="flex flex-col items-center gap-0.5 shrink-0 w-10">
           {SETTINGS_NAV.map(({ href, label, icon }) => (
             <NavItem
               key={href}
@@ -137,7 +137,7 @@ export function SidebarNav({
         {/* Expand toggle */}
         <button
           onClick={onToggle}
-          className="flex items-center justify-center p-2 rounded-[12px] text-[#71717a] hover:bg-[rgba(255,255,255,0.04)] hover:text-foreground transition-colors duration-150 shrink-0"
+          className="flex items-center justify-center p-1.5 rounded-[12px] text-[#71717a] hover:bg-[rgba(255,255,255,0.04)] hover:text-foreground transition-colors duration-150 shrink-0"
           aria-label="Expand sidebar"
         >
           <CaretDoubleRight size={20} weight="regular" />
@@ -147,7 +147,7 @@ export function SidebarNav({
   }
 
   return (
-    <div className="flex flex-col gap-6 px-[10px] py-5 h-full">
+    <div className="flex flex-col gap-5 px-[10px] py-5 h-full">
       {/* Logo + app name */}
       <div className="flex items-center gap-[6px] pl-[6px] pr-0 py-1 shrink-0">
         <PerispekLogo size={32} />
@@ -158,12 +158,12 @@ export function SidebarNav({
 
       {/* General section */}
       <div className="flex flex-1 flex-col gap-1 min-h-0">
-        <div className="pl-2 shrink-0">
+        <div className="pl-1.5 shrink-0">
           <span className="text-xs font-medium leading-[14px] tracking-[0.04px] text-[#71717a]">
             General
           </span>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-0.5">
           {MAIN_NAV.map(({ href, label, icon }) => (
             <NavItem
               key={href}
@@ -182,12 +182,12 @@ export function SidebarNav({
 
       {/* Settings section */}
       <div className="flex flex-col gap-1 shrink-0">
-        <div className="pl-2">
+        <div className="pl-1.5">
           <span className="text-xs font-medium leading-[14px] tracking-[0.04px] text-[#71717a]">
             Settings
           </span>
         </div>
-        <div className="flex flex-col py-1">
+        <div className="flex flex-col gap-0.5 py-1">
           {SETTINGS_NAV.map(({ href, label, icon }) => (
             <NavItem
               key={href}
@@ -207,7 +207,7 @@ export function SidebarNav({
       {/* Collapse toggle */}
       <button
         onClick={onToggle}
-        className="flex items-center gap-2 p-2 min-h-8 rounded-[12px] text-[#71717a] hover:bg-[rgba(255,255,255,0.04)] hover:text-foreground transition-colors duration-150 shrink-0"
+        className="flex items-center gap-1.5 p-1.5 min-h-8 rounded-[12px] text-[#71717a] hover:bg-[rgba(255,255,255,0.04)] hover:text-foreground transition-colors duration-150 shrink-0"
         aria-label="Collapse sidebar"
       >
         <CaretDoubleLeft size={20} weight="regular" />
